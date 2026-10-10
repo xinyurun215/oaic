@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "job_id": "failing_job",
+  "requirements": [
+    {"requirement_id": "req", "text": "Failure path"}
+  ],
+  "interfaces": [
+    {"interface_id": "api", "name": "API", "requirement_ids": ["req"]}
+  ],
+  "tests": [
+    {"test_id": "test", "name": "Test", "requirement_ids": ["req"], "interface_ids": ["api"]}
+  ],
+  "stages": [
+    {"stage_id": "first", "action": "emit", "payload": {"value": 1}, "requirement_ids": ["req"], "interface_ids": ["api"], "test_ids": ["test"]},
+    {"stage_id": "second", "action": "fail", "payload": {"reason": "deterministic"}, "requirement_ids": ["req"], "interface_ids": ["api"], "test_ids": ["test"]},
+    {"stage_id": "third", "action": "emit", "payload": {"value": 3}, "requirement_ids": ["req"], "interface_ids": ["api"], "test_ids": ["test"]}
+  ]
+}

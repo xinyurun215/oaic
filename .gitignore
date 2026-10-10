@@ -1,0 +1,18 @@
+# Generated local scratch files
+tmp/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Public-release extras
+.workbuddy/
+.tmp/
+.superpowers/
+*.zip.bak
+
